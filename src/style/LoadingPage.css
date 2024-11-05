@@ -1,0 +1,70 @@
+/* src/style/LoadingPage.css */
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .pulse-icon {
+    color: #e53935;
+    animation: pulse 1.5s infinite;
+  }
+  
+  .heart-icon {
+    font-size: 4rem;
+  }
+  
+  .floating-pills {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .pill-icon, .syringe-icon, .pills-icon {
+    font-size: 2rem;
+    color: #4facfe;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .syringe-icon {
+    color: #00796b;
+    animation-delay: 0.5s;
+  }
+  
+  .pills-icon {
+    color: #fbbc05;
+    animation-delay: 1s;
+  }
+  
+  .loading-text {
+    font-size: 1.5rem;
+    color: #00796b;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  

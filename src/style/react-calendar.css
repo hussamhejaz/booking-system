@@ -1,0 +1,198 @@
+/* Center the container and prevent large empty spaces */
+.min-h-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Wrapper for the calendar and time slots */
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Booking Form Container */
+.booking-container {
+  max-width: 600px;
+  width: 100%;
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Calendar Container Styling */
+.react-calendar {
+  width: 100%;
+  max-width: 320px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.react-calendar:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Calendar Header Navigation Styling */
+.react-calendar__navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.react-calendar__navigation button {
+  color: #00796b;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+.react-calendar__navigation button:hover {
+  background-color: #e0f7fa;
+}
+
+/* Weekday Name Styling */
+.react-calendar__month-view__weekdays {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #4facfe;
+  font-size: 0.875rem;
+}
+
+/* Calendar Date Tile Styling */
+.react-calendar__tile {
+  border-radius: 12px;
+  padding: 0.75rem;
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.react-calendar__tile--now {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+  font-weight: bold;
+}
+
+.react-calendar__tile--active {
+  background-color: #00f2fe;
+  color: white;
+  font-weight: bold;
+}
+
+.react-calendar__tile--now:hover,
+.react-calendar__tile--active:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #00796b, #00f2fe);
+  color: white;
+}
+
+.react-calendar__tile:hover {
+  background-color: #e0f7fa;
+  transform: scale(1.05);
+}
+
+/* Department Button Styling */
+.department-button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #e0f7fa, #b2dfdb);
+  color: #00695c;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.department-button.active {
+  background: linear-gradient(135deg, #00796b, #004d40);
+  color: white;
+}
+
+.department-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #b2dfdb, #80cbc4);
+}
+
+/* Time Slot Button Styling */
+.time-slot-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.time-slot-button.active {
+  background: linear-gradient(135deg, #0066cc, #004d99);
+  color: white;
+}
+
+.time-slot-button:hover {
+  background: linear-gradient(135deg, #80bfff, #4facfe);
+  transform: scale(1.1);
+}
+
+.gradient-button {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+  font-weight: bold;
+  padding: 8px 16px; /* Reduce padding for a smaller button */
+  font-size: 0.875rem; /* Reduce font size for better proportion */
+  border: none;
+  border-radius: 20px; /* Slightly rounder for a compact look */
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient-button:hover {
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03); /* Smaller scale effect */
+}
+.gradient-button:active {
+  transform: scale(1); /* No scale on active for better UX */
+}
+/* Form Input Styling */
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #00796b;
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 121, 107, 0.3);
+}
