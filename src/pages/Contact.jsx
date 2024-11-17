@@ -1,12 +1,13 @@
 import React from 'react';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
-import { useTranslation } from 'react-i18next'; // Import the translation hook
+import { useTranslation } from 'react-i18next';
 
 function Contact() {
-  const { t, i18n } = useTranslation(); // Get translation function and i18n instance
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === 'ar';
 
   return (
-    <div className={`bg-gray-100 min-h-screen p-6 ${i18n.language === 'ar' ? 'rtl' : ''}`}>
+    <div className={`bg-gray-100 min-h-screen p-6 ${isArabic ? 'rtl' : ''}`}>
       <div className="max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-lg space-y-8">
         
         {/* Title */}
@@ -50,7 +51,7 @@ function Contact() {
         {/* Operating Hours */}
         <div className="mb-8">
           <h2 className="text-2xl font-semibold text-blue-600 mb-4">{t('contact.operatingHours')}</h2>
-          <div className="flex items-center space-x-4">
+          <div className={`flex items-center ${isArabic ? 'space-x-reverse' : ''} space-x-4`}>
             <FaClock className="text-blue-600 w-8 h-8" />
             <div>
               <p className="text-gray-700"><strong>{t('contact.hours.mondayFriday')}</strong></p>
@@ -65,7 +66,7 @@ function Contact() {
           <h2 className="text-2xl font-semibold text-blue-600 mb-4">{t('contact.getInTouch')}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {/* Phone */}
-            <div className="flex items-center space-x-3">
+            <div className={`flex items-center ${isArabic ? 'space-x-reverse' : ''} space-x-3`}>
               <FaPhoneAlt className="text-blue-600 w-6 h-6" />
               <div>
                 <h3 className="text-lg font-semibold">{t('contact.phoneLabel')}</h3>
@@ -74,7 +75,7 @@ function Contact() {
             </div>
             
             {/* Email */}
-            <div className="flex items-center space-x-3">
+            <div className={`flex items-center ${isArabic ? 'space-x-reverse' : ''} space-x-3`}>
               <FaEnvelope className="text-blue-600 w-6 h-6" />
               <div>
                 <h3 className="text-lg font-semibold">{t('contact.emailLabel')}</h3>
@@ -83,7 +84,7 @@ function Contact() {
             </div>
             
             {/* Address */}
-            <div className="flex items-center space-x-3">
+            <div className={`flex items-center ${isArabic ? 'space-x-reverse' : ''} space-x-3`}>
               <FaMapMarkerAlt className="text-blue-600 w-6 h-6" />
               <div>
                 <h3 className="text-lg font-semibold">{t('contact.addressLabel')}</h3>

@@ -8,46 +8,44 @@ import Contact from './pages/Contact';
 import BookAppointment from './pages/BookAppointment';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import LoadingPage from './components/ LoadingPage';
+import LoadingPage from './components/ LoadingPage'
+import Dashboard from './dashboard/Dashboard';
+
+
 import { useTranslation } from 'react-i18next';
 import './App.css';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true); // Loading state
-  const { i18n } = useTranslation(); // Get the i18n instance
+  const [isLoading, setIsLoading] = useState(true);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
-    // Simulate a delay to show the loading page
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Display loading screen for 3 seconds
-
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
-  // Check if the current language is Arabic
   const isArabic = i18n.language === 'ar';
 
   return (
     <Router>
-      <div className={`App ${isArabic ? 'rtl' : ''}`}> {/* Apply RTL class conditionally */}
+      <div className={`App ${isArabic ? 'rtl' : ''}`}>
         {isLoading ? (
-          // Show LoadingPage component while loading
           <LoadingPage />
         ) : (
-          // Main content after loading completes
           <>
-            <Navbar />
-            <div className="main-content pt-16 pb-16">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/book" element={<BookAppointment />} />
-              </Routes>
-            </div>
-            <Footer />
+            <Routes>
+              {/* Main Site Routes */}
+              <Route path="/" element={<><Navbar /><Home /><Footer /></>} />
+              <Route path="/about" element={<><Navbar /><About /><Footer /></>} />
+              <Route path="/services" element={<><Navbar /><Services /><Footer /></>} />
+              <Route path="/contact" element={<><Navbar /><Contact /><Footer /></>} />
+              <Route path="/book" element={<><Navbar /><BookAppointment /><Footer /></>} />
+
+              {/* Dashboard Routes */}
+              <Route path="/dashboard/*" element={<Dashboard />} />
+            </Routes>
           </>
         )}
       </div>
